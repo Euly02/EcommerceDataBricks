@@ -394,9 +394,6 @@ jobs:
                 },
                 {
                   "task_key": "Transform_orders"
-                },
-                {
-                  "task_key": "Transform_payments"
                 }
               ]
             }
