@@ -18,7 +18,7 @@ jobs:
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_BASE="/Workspace/Shared/EcommerceDataBricks/proceso"
-        NOTEBOOKS=("Ingest_customers" "Ingest_location" "ingest_order_items" "Ingest_Orders" "ingest_payments" "ingest_product_categories" "ingest_productos" "Load_delivery_metrics" "Load_ventas_categoria" "Load_ventas_mensuales" "Transform_customers" "Transform_order_items" "Transform_orders" "Transform_payments" "Transform_products" "preparacion_ambiente" )
+        NOTEBOOKS=("Ingest_customers" "Ingest_location" "ingest_order_items" "Ingest_Orders" "ingest_payments" "ingest_product_categories" "ingest_productos" "Load_delivery_metrics" "Load_ventas_categoria" "Load_ventas_mensuales" "Transform_customers" "Transform_order_items" "Transform_orders" "Transform_payments" "Transform_products")
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
@@ -126,20 +126,6 @@ jobs:
           "name": "WF_ECOMMERCE",
           "format": "MULTI_TASK",
           "tasks": [
-            {
-              "task_key": "preparacion_ambiente",
-              "description": "Ejecuta notebook preparacion_ambiente con parámetros",
-              "notebook_task": {
-                "notebook_path": "/etl/scripts/preparacion_ambiente",
-                "source": "WORKSPACE",
-                "base_parameters": {
-                  "storageName": "adlsecommerceproject"
-                }
-              },
-              "existing_cluster_id": "$CLUSTER_ID",
-              "timeout_seconds": 3600,
-              "max_retries": 2
-            },
             {
               "task_key": "Ingest_customers",
               "description": "Ejecuta notebook Ingest_customers con parámetros",
@@ -447,6 +433,9 @@ jobs:
                 },
                 {
                   "task_key": "Transform_orders"
+                },
+                {
+                  "task_key": "Transform_payments"
                 }
               ]
             }
@@ -671,7 +660,7 @@ jobs:
         echo "🎉 ¡Despliegue y ejecución completados exitosamente!"
         echo ""
         echo "📊 Resumen:"
-        echo "✅ Notebooks desplegados: ntbk_1, ntbk_2"
+        echo "✅ Notebooks desplegados: Todos"
         echo "✅ Workflow creado: WF_ECOMMERCE"
         echo "✅ Tareas configuradas:"
         echo "   - tarea1_notebook1 (ntbk_1)"
