@@ -374,7 +374,7 @@ jobs:
               "depends_on": [
                 {
                   "task_key": "Transform_customers"
-                }
+                },
                 {
                   "task_key": "Transform_orders"
                 }
@@ -399,7 +399,7 @@ jobs:
               "depends_on": [
                 {
                   "task_key": "Transform_products"
-                }
+                },
                 {
                   "task_key": "Transform_order_items"
                 }
@@ -424,12 +424,12 @@ jobs:
               "depends_on": [
                 {
                   "task_key": "Transform_order_items"
-                }
+                },
                 {
                   "task_key": "Transform_orders"
                 }
               ]
-            },
+            }
           ],
           "schedule": {
             "quartz_cron_expression": "0 0 8 * * ?",
