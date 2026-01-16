@@ -1,4 +1,4 @@
-name: Deploy Ecommerce - ETL
+name: Deploy Ecommerce ETL
 on:
   push:
     branches:
