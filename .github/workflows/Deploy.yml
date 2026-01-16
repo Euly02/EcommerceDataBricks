@@ -17,7 +17,7 @@ jobs:
       run: |
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
-        NOTEBOOK_BASE="/Workspace/Users/reyeseuly83_gmail.com#ext#@reyeseuly83gmail.onmicrosoft.com/EcommerceDataBricks"
+        NOTEBOOK_BASE="/Workspace/Shared/EcommerceDataBricks/.github/workflows/Deploy.yml"
         NOTEBOOKS=("Ingest_customers" "Ingest_location" "ingest_order_items" "Ingest_Orders" "ingest_payments" "ingest_product_categories" "ingest_productos" "Load_delivery_metrics" "Load_ventas_categoria" "Load_ventas_mensuales" "Transform_customers" "Transform_order_items" "Transform_orders" "Transform_payments" "Transform_products" "preparacion_ambiente" )
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
