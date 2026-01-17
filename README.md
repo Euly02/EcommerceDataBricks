@@ -207,7 +207,7 @@ git push origin master
 
 **Proyecto**: Data Engineering - Arquitectura Medallion  
 **Tecnología**: Azure Databricks + Delta Lake + CI/CD  
-**Última actualización**: 2025
+**Última actualización**: 2026
 
 
 </div>
