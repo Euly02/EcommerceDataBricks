@@ -63,7 +63,7 @@ proyecto-etl-ecommerce/
 │   └── workflows/
 │       └── deploy.yaml                # Pipeline de deployment
 │
-├── datasets/                          # 📂 Datasets descargados (NO subir a Git)
+├── datasets/                          # 📂 Datasets descargados
 │   ├── olist_orders_dataset.csv
 │   ├── olist_order_items_dataset.csv
 │   ├── olist_customers_dataset.csv
@@ -106,7 +106,6 @@ proyecto-etl-ecommerce/
 └── certificaciones/                   # ✅ Certificaciones databricks
     ├── certificacion1.png             
     ├── certificacion2.png             
-    ├── certificacion3.png
 ```
 
 ## 🛠️ Tecnologías
